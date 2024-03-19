@@ -2,14 +2,17 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import './TodoDetails.scss';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+  
 
 const TodoDetails = () => {
+  const navigate_to = useNavigate();
   const todos = useSelector((state) => state.todo.tasks);
   const { id } = useParams();
   const todo = todos.find((todo) => todo.id === parseInt(id));
 
   return (
-    <div className="todo-details-container">
+    <div className="todo-details-container" onClick={()=>{navigate_to('/')}}>
       {todo ? (
         <div className="todo-details">
           <h3 className="todo-id">Id: {todo.id}</h3>

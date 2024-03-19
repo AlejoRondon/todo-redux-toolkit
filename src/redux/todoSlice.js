@@ -2,7 +2,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  tasks: [{ id: 1, title: 'default', description: 'default', done: false }], // An array to store our tasks
+  tasks: [
+    { id: 1, title: 'Clean bathroom', description: 'created on initialState', done: false },
+    { id: 2, title: 'Walk dog', description: 'created on initialState', done: false },
+    { id: 3, title: 'Smile', description: 'created on initialState', done: true },
+    { id: 4, title: 'Be happy!', description: 'created on initialState', done: true }
+
+  ], 
 };
 
 const todoSlice = createSlice({
