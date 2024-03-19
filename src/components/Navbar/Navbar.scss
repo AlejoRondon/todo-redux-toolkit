@@ -1,0 +1,30 @@
+nav {
+  background-color: #333;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+  }
+
+  li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+}
