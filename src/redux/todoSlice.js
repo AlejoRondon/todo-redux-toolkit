@@ -1,5 +1,5 @@
 // src/redux/todoSlice.js
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice,nanoid} from '@reduxjs/toolkit';
 
 const initialState = {
   tasks: [
@@ -16,7 +16,9 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     addTask: (state, action) => {
-      state.tasks.push(action.payload); // Add a new task to the array
+      let new_task = {id: nanoid(), ...action.payload, done: false}
+      console.log(new_task)
+      state.tasks.push(new_task); // Add a new task to the array
     },
     toggleTaskStatus: (state, action) => {
       const task = state.tasks.find((task) => task.id === action.payload);
@@ -28,7 +30,7 @@ const todoSlice = createSlice({
       state.tasks = state.tasks.filter((task) => task.id !== action.payload); // Remove the task
     },
     resetTasks: (state) => {
-      state.tasks = [...initialState]; // Clear the tasks array
+      state.tasks = [...initialState.tasks]; // Clear the tasks array
     },
   },
 });

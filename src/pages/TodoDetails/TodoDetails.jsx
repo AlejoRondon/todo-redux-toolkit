@@ -8,8 +8,9 @@ import { useNavigate } from 'react-router-dom';
 const TodoDetails = () => {
   const navigate_to = useNavigate();
   const todos = useSelector((state) => state.todo.tasks);
+  console.log(todos)
   const { id } = useParams();
-  const todo = todos.find((todo) => todo.id === parseInt(id));
+  const todo = todos.find((todo) => todo.id === id);
 
   return (
     <div className="todo-details-container" onClick={()=>{navigate_to('/')}}>

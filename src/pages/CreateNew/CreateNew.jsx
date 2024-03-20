@@ -15,8 +15,7 @@ const CreateNew = () => {
     e.preventDefault();
     if (!title.trim() || !description.trim()) return;
 
-    const newTask = { id: Date.now(), title, description };
-    dispatch(addTask(newTask));
+    dispatch(addTask({ title, description }));
 
     setTitle('');
     setDescription('');
